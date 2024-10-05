@@ -12,6 +12,15 @@ final readonly class RegisterPayload
         public string $password,
     ) {}
 
+    public static function make(string $name, string $email, string $password): RegisterPayload
+    {
+        return new RegisterPayload(
+            name: $name,
+            email: $email,
+            password: $password,
+        );
+    }
+
     /** @return array{name:string,email:string,password:string} */
     public function toArray(): array
     {
@@ -20,14 +29,5 @@ final readonly class RegisterPayload
             'email' => $this->email,
             'password' => $this->password,
         ];
-    }
-
-    public static function make(string $name, string $email, string $password): RegisterPayload
-    {
-        return new RegisterPayload(
-            name: $name,
-            email: $email,
-            password: $password,
-        );
     }
 }

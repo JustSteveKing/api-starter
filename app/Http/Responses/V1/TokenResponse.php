@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Responses\V1;
 
+use function config;
+
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-
-use function config;
 
 final readonly class TokenResponse implements Responsable
 {

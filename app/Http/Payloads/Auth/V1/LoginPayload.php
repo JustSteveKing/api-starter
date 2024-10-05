@@ -11,6 +11,14 @@ final readonly class LoginPayload
         public string $password,
     ) {}
 
+    public static function make(string $email, string $password): LoginPayload
+    {
+        return new LoginPayload(
+            email: $email,
+            password: $password,
+        );
+    }
+
     /** @return array{email:string,password:string} */
     public function toArray(): array
     {
@@ -18,13 +26,5 @@ final readonly class LoginPayload
             'email' => $this->email,
             'password' => $this->password,
         ];
-    }
-
-    public static function make(string $email, string $password): LoginPayload
-    {
-        return new LoginPayload(
-            email: $email,
-            password: $password,
-        );
     }
 }

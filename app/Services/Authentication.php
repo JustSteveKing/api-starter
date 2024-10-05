@@ -8,13 +8,13 @@ use App\Http\Payloads\Auth\V1\LoginPayload;
 use App\Http\Payloads\Auth\V1\RegisterPayload;
 use App\Models\User;
 
-use Illuminate\Validation\ValidationException;
-use Throwable;
 use function array_merge;
 
 use Illuminate\Contracts\Hashing\Hasher;
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Validation\ValidationException;
 use PHPOpenSourceSaver\JWTAuth\JWTAuth;
+use Throwable;
 
 final readonly class Authentication
 {
